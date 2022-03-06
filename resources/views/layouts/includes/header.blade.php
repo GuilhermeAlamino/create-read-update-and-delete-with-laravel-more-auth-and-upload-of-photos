@@ -13,8 +13,7 @@
         body {
             margin: 0px !important;
             padding: 0px !important;
-            width: 100% !important;
-            height: 100% !important;
+            background-color: #d8d8d8;
         }
 
         .nav-customize {
@@ -29,29 +28,86 @@
             padding: 0px 50px 0px 225px;
         }
 
-        .content-login{
-            padding: 0px 550px ;            
+        .content-login {
+            height: 100%;
         }
 
         .content-menu-nav {
             padding: 25px 10px;
         }
 
-        .card-deck{
+        .card-deck {
             width: 25%;
             height: auto;
             margin: 0px auto;
         }
 
-        .card-img-top{
+        .card-img-top {
             width: 100% !important;
             height: auto !important;
         }
 
-        .paginate-center{
+        .paginate-center {
             display: flex;
             justify-content: center;
         }
+
+        /* login */
+
+
+        img.startup {
+            width: 100%;
+        }
+
+        .label_login {
+            font-size: 25px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .button_login {
+            width: 100%;
+            border-radius: 20px;
+            background-color: #000;
+            border: none;
+        }
+
+
+        .card_login {
+            width: 100% !important;
+            box-shadow: 0px 0px 20px #ffffff;
+            height: auto;
+            background-color: #ffffff;
+        }
+
+        .world {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 450px;
+        }
+
+        @media only screen and (max-width: 420px) {
+            .ajusted_mobile {
+                margin: 0px 30px !important;
+            }
+
+            .no_padding_margim {
+                padding: 0px !important;
+                margin: 0px !important;
+                height: unset !important;
+            }
+        }
+
+        .container{
+            height: 100vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* login */
+
     </style>
 </head>
 
