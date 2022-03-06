@@ -4,61 +4,72 @@
 
 @section('conteudo')
 
-    @include('layouts.components.nav-bar')
+    <div class="row p-0 m-0">
+        <div class="col-12 p-0 m-0">
+            @include('layouts.components.nav-bar')
+        </div>
+    </div>
 
-    @include('layouts.components.nav')
-
-
-    <div class="container-fluid content-home">
-        <div class="title-list">
-            <h5 class="my-5">Lista de Registros</h5>
+    <div class="row p-0 m-0">
+        <div class="col-2 p-0 m-0">
+            @include('layouts.components.nav')
         </div>
 
-        <div class="row">
-            <div class="col-12">
+        <div class="col-10 p-0 m-0">
+            <div class="container-fluid content-home">
+                <div class="title-list">
+                    <h5 class="my-5">Lista de Registros</h5>
+                </div>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Imagem</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Sobrenome</th>
-                            <th scope="col">CPF</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Adress</th>
-                            <th scope="col">Rua</th>
-                            <th scope="col">Ação</th>
-                        </tr>
-                    </thead>
+                <div class="row">
+                    <div class="col-12">
 
-                    @foreach ($registros as $registro)
-                        <tbody>
-                            <tr>
-                                <td>{{ $registro->id }}</td>
-                                <td><img width="25" height="25" class="rounded-circle d-flex" src="{{ asset($registro->imagem) }}"
-                                        alt=""></td>
-                                <td>{{ $registro->nome }}</td>
-                                <td>{{ $registro->sobrenome }}</td>
-                                <td>{{ $registro->cpf }}</td>
-                                <td>{{ $registro->email }}</td>
-                                <td>{{ $registro->telefone }}</td>
-                                <td>{{ $registro->adress }}</td>
-                                <td>{{ $registro->rua }}</td>
-                                <td>
-                                    <a class="btn btn-warning"
-                                        href="{{ route('users.users.user.editar', $registro->id) }}">Editar</a>
-                                    <a class="btn btn-danger"
-                                        href="{{ route('users.users.user.deletar', $registro->id) }}">Excluir</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    @endforeach
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Imagem</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Sobrenome</th>
+                                    <th scope="col">CPF</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Adress</th>
+                                    <th scope="col">Rua</th>
+                                    <th scope="col">Ação</th>
+                                </tr>
+                            </thead>
 
-                </table>
+                            @foreach ($registros as $registro)
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $registro->id }}</td>
+                                        <td><img width="25" height="25" class="rounded-circle d-flex"
+                                                src="{{ asset($registro->imagem) }}" alt=""></td>
+                                        <td>{{ $registro->nome }}</td>
+                                        <td>{{ $registro->sobrenome }}</td>
+                                        <td>{{ $registro->cpf }}</td>
+                                        <td>{{ $registro->email }}</td>
+                                        <td>{{ $registro->telefone }}</td>
+                                        <td>{{ $registro->adress }}</td>
+                                        <td>{{ $registro->rua }}</td>
+                                        <td>
+                                            <a class="btn btn-warning"
+                                                href="{{ route('users.users.user.editar', $registro->id) }}">Editar</a>
+                                            <a class="btn btn-danger"
+                                                href="{{ route('users.users.user.deletar', $registro->id) }}">Excluir</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            @endforeach
+
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
 @endsection

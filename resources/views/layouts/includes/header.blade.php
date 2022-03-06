@@ -11,6 +11,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
         body {
             margin: 0px !important;
             padding: 0px !important;
@@ -21,26 +22,39 @@
         .nav-customize {
             position: absolute;
             left: 0;
-            height: 100%;
-            width: 205px !important;
+            height: 100vh;
+            width: 100% !important;
             background-color: #39374ee6;
         }
+
         .navbar_custom {
             background-color: #3f3d56;
             box-shadow: 0px 1px 10px #3f3d56;
             z-index: 999;
-           
+
         }
+
         .nav-link {
             color: #ffffff !important;
         }
 
-        .side-color-left{
-            border-left: 3px solid #ffffff;
+        .side-color-left {
+            border-left: 4px solid #212529 !important;
+        }
+        .side-color-left-transparent {
+            border-left:4px solid #39374e00 !important;
+        }
+
+        .back-white {
+            background-color: #ffffff;
+        }
+
+        .nav-link-customize {
+            color: #212529 !important;
         }
 
         .content-home {
-            padding: 0px 50px 0px 225px;
+            /* padding: 0px 50px 0px 225px; */
         }
 
         .content-login {
@@ -48,7 +62,7 @@
         }
 
         .content-menu-nav {
-            padding: 25px 10px;
+            padding: 15px 10px;
         }
 
         .card-deck {
@@ -114,7 +128,7 @@
             }
         }
 
-        .container{
+        .container {
             height: 100vh !important;
             display: flex !important;
             align-items: center !important;
@@ -122,6 +136,17 @@
         }
 
         /* login */
+
+        /* dashboard */
+
+
+        .card-teste {
+            border: 1px solid;
+            width: 100%;
+            height: 163px;
+        }
+
+        /* dashboard */
 
     </style>
 </head>
