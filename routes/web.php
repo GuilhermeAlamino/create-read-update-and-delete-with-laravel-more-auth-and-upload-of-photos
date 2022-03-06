@@ -17,7 +17,7 @@ Route::get('/', ['as' => 'welcome.login', 'uses' => 'auth\LoginController@welcom
 Route::get('/login/logout', ['as' => 'welcome.login.logout', 'uses' => 'auth\LoginController@sair']);
 Route::post('/login/entrar', ['as' => 'welcome.login.entrar', 'uses' => 'auth\LoginController@entrar']);
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'prefix'=> 'admin', 'as' => 'admin.' ], function () {
     Route::get('/admin/users/register', ['as' => 'welcome.list', 'uses' => 'crud\WelcomeController@welcomeList']);
 
     Route::get('/admin/user/lista', ['as' => 'admin.user.lista', 'uses' => 'crud\Create@index']);
