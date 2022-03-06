@@ -23,7 +23,6 @@ Route::group(['middleware' => 'auth', 'prefix'=> 'admin', 'as' => 'admin.'], fun
 
     Route::post('/user/salvar', 'crud\Create@salvar')->name('admin.user.salvar');
 
-
     Route::put('/user/atualizar/{id}', 'crud\Create@atualizar')->name('admin.user.atualizar');
 
 });
