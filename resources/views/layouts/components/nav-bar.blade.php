@@ -1,5 +1,5 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand content-menu-nav" href="{{ route('welcome.list') }}">Crud Laravel</a>
+<nav class="navbar navbar_custom navbar-expand-lg">
+    <a class="navbar-brand content-menu-nav nav-link text-center" href="{{ route('welcome.list') }}">Reciclagem <br> CNH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
             <div class="user">
                 <div class="img ">
                     <div class="text-user">
-                        <a href="#">Encontramos o Usúario -> *{{ Auth::user()->name }}*</a>
+                        <a class="nav-link" href="#">Encontramos o Usúario -> *{{ Auth::user()->name }}*</a>
                     </div>
                 </div>
             </div>

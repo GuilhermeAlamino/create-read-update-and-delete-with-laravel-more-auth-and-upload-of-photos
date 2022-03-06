@@ -10,18 +10,33 @@
     <title>@yield('titulo')</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
         body {
             margin: 0px !important;
             padding: 0px !important;
-            background-color: #d8d8d8;
+            background-color: #ffffff;
+            font-family: 'Roboto', sans-serif;
         }
 
         .nav-customize {
             position: absolute;
             left: 0;
             height: 100%;
-            width: 175px !important;
-            background: #666;
+            width: 205px !important;
+            background-color: #39374ee6;
+        }
+        .navbar_custom {
+            background-color: #3f3d56;
+            box-shadow: 0px 1px 10px #3f3d56;
+            z-index: 999;
+           
+        }
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .side-color-left{
+            border-left: 3px solid #ffffff;
         }
 
         .content-home {
@@ -126,6 +141,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/db5f7d3111.js" crossorigin="anonymous"></script>
 
 </body>
 

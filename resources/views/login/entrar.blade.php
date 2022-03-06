@@ -1,12 +1,9 @@
 @extends('layouts.includes.header')
 
-@section('titulo', 'Cursos')
+@section('titulo', 'Login')
 
 @section('conteudo')
 
-    {{-- @include('layouts.components.nav-bar')
-
-    @include('layouts.components.nav') --}}
 
     <div class="container">
         <div class="row p-0 m-0">
@@ -19,10 +16,6 @@
                             <img class="startup" src="{{ asset('login/world.svg') }}" alt="">
                         </div>
                     </div>
-                    {{-- <div class="col-12 d-flex justify-content-end">
-                <a class="btn btn-primary mb-3" href="{{ route('admin.cursos.adicionar') }}">Criar Registros</a>
-                </div> --}}
-
                     <div class="col-12 col-lg-4 p-0 m-0">
 
                         <div class="row world-two p-0 m-0">
@@ -33,7 +26,6 @@
 
                                     <div class="startup_div">
                                         <img class="startup py-4 px-5" src="{{ asset('login/startup.svg') }}" alt="">
-                                        {{-- <h5 class="mt-5">Login</h5> --}}
                                     </div>
 
                                     <div class="no_padding_margim">
