@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('entrar');
+    return view('login.entrar');
 });
 
 Route::get('/login', ['as' => 'welcome.login', 'uses' => 'auth\LoginController@welcomeLogin']);
