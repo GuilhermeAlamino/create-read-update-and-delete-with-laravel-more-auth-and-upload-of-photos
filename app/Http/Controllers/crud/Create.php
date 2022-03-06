@@ -10,7 +10,6 @@ class Create extends Controller
 {
     public function index()
     {
-
         $registros = Crud::all();
         return view('registers.index_home', compact('registros'));
     }
@@ -38,7 +37,7 @@ class Create extends Controller
 
         Crud::create($dados);
 
-        return redirect()->route('admin.user.lista');
+        return redirect()->route('cursos.cursos.user.lista');
     }
 
     public function editar($id)
@@ -66,12 +65,16 @@ class Create extends Controller
 
         Crud::find($id)->update($dados);
 
-        return redirect()->route('admin.user.lista');
+        return redirect()->route('cursos.cursos.user.lista');
     }
 
     public function deletar($id)
     {
         Crud::find($id)->delete();
-        return redirect()->route('admin.user.lista');
+        return redirect()->route('cursos.cursos.user.lista');
+    }
+
+    public function config(){
+        return view('settings.configuration');
     }
 }

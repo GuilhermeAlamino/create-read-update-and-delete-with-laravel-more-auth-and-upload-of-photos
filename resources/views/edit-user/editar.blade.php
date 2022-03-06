@@ -20,7 +20,7 @@
                 <div class="table">
 
                     <form class="" enctype="multipart/form-data"
-                        action="{{ route('admin.user.atualizar', $registro->id) }}" method="post">
+                        action="{{ route('admin.admin.user.atualizar', $registro->id) }}" method="post">
                         @csrf
                         <input type="hidden" name="_method" value="put">
                         @include('layouts.components._form')

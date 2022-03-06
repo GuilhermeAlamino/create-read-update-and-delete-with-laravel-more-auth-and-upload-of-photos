@@ -14,34 +14,34 @@
                 @else
                     <div class="row p-0 m-0">
                         <div class="col-12 p-0 m-0">
-                            <div class="content-menu-nav d-flex {{Request::is('welcome.list/*') ? 'side-color-left' : ''}}">
+                            <div class="content-menu-nav d-flex {{Request::is('admin/*') ? 'side-color-left' : ' '}}">
                                 <i class="fa-solid fa-house"></i>
-                                <a class="nav-link" href="{{ route('welcome.list') }}">Home</a>
+                                <a class="nav-link" href="{{ route('admin.welcome.list') }}">Home</a>
                             </div>
                         </div>
                     </div>
                     <div class="row p-0 m-0">
                         <div class="col-12 p-0 m-0">
-                            <div class="content-menu-nav d-flex">
+                            <div class="content-menu-nav d-flex {{Request::is('cursos/*') ? 'side-color-left' : ' '}}">
                                 <i class="fa-solid fa-id-card"></i>
-                                <a class="nav-link" href="{{ route('admin.user.lista') }}">Cursos</a>
+                                <a class="nav-link" href="{{ route('cursos.cursos.user.lista') }}">Cursos</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="row p-0 m-0">
                         <div class="col-12 p-0 m-0">
-                            <div class="content-menu-nav d-flex">
+                            <div class="content-menu-nav d-flex {{Request::is('users/*') ? 'side-color-left' : ' '}}">
                                 <i class="fa-solid fa-users"></i>
-                                <a class="nav-link" href="{{ route('admin.user.adicionar') }}">Usúarios</a>
+                                <a class="nav-link" href="{{ route('users.users.user.adicionar') }}">Usúarios</a>
                             </div>
                         </div>
                     </div>
                     <div class="row p-0 m-0">
                         <div class="col-12 p-0 m-0">
-                            <div class="content-menu-nav d-flex">
+                            <div class="content-menu-nav d-flex {{Request::is('config/*') ? 'side-color-left' : ' '}}">
                                 <i class="fa-solid fa-gear"></i>
-                                <a class="nav-link" href="{{ route('admin.user.lista') }}">Configurações</a>
+                                <a class="nav-link" href="{{ route('config.config.configusers') }}">Configurações</a>
                             </div>
                         </div>
                     </div>

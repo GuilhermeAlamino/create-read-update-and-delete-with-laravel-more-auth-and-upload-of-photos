@@ -1,5 +1,5 @@
 <nav class="navbar navbar_custom navbar-expand-lg">
-    <a class="navbar-brand content-menu-nav nav-link text-center" href="{{ route('welcome.list') }}">Reciclagem <br> CNH</a>
+    <a class="navbar-brand content-menu-nav nav-link text-center" href="{{ route('admin.welcome.list') }}">Reciclagem <br> CNH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

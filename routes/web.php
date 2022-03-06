@@ -13,34 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', ['as' => 'welcome.login', 'uses' => 'auth\LoginController@welcomeLogin']);
-Route::get('/login/logout', ['as' => 'welcome.login.logout', 'uses' => 'auth\LoginController@sair']);
-Route::post('/login/entrar', ['as' => 'welcome.login.entrar', 'uses' => 'auth\LoginController@entrar']);
+Route::get('/', 'auth\LoginController@welcomeLogin')->name('welcome.login');
+Route::get('/login/logout', 'auth\LoginController@sair')->name('welcome.login.logout');
+Route::post('/login/entrar', 'auth\LoginController@entrar')->name('welcome.login.entrar');
 
-Route::group(['middleware' => 'auth', 'prefix'=> 'admin', 'as' => 'admin.' ], function () {
-    Route::get('/admin/users/register', ['as' => 'welcome.list', 'uses' => 'crud\WelcomeController@welcomeList']);
+Route::group(['middleware' => 'auth', 'prefix'=> 'admin', 'as' => 'admin.'], function () {
 
-    Route::get('/admin/user/lista', ['as' => 'admin.user.lista', 'uses' => 'crud\Create@index']);
+    Route::get('/users/register', 'crud\WelcomeController@welcomeList')->name('welcome.list');
 
-    Route::get('/admin/user/adicionar', ['as' => 'admin.user.adicionar', 'uses' => 'crud\Create@criar']);
+    Route::post('/user/salvar', 'crud\Create@salvar')->name('admin.user.salvar');
 
-    Route::post('/admin/user/salvar', ['as' => 'admin.user.salvar', 'uses' => 'crud\Create@salvar']);
 
-    Route::get('/admin/user/editar/{id}', ['as' => 'admin.user.editar', 'uses' => 'crud\Create@editar']);
+    Route::put('/user/atualizar/{id}', 'crud\Create@atualizar')->name('admin.user.atualizar');
 
-    Route::put('/admin/user/atualizar/{id}', ['as' => 'admin.user.atualizar', 'uses' => 'crud\Create@atualizar']);
-
-    Route::get('/admin/user/deletar/{id}', ['as' => 'admin.user.deletar', 'uses' => 'crud\Create@deletar']);
 });
 
-// Route::get('/admin/user/lista', ['as' => 'admin.user.lista', 'uses' => 'crud\Create@index']);
+Route::group(['middleware' => 'auth', 'prefix'=> 'users', 'as' => 'users.'], function () {
+    Route::get('/user/adicionar', 'crud\Create@criar')->name('users.user.adicionar');
+    Route::get('/user/editar/{id}', 'crud\Create@editar')->name('users.user.editar');
+    Route::get('/user/deletar/{id}', 'crud\Create@deletar')->name('users.user.deletar');
 
-// Route::get('/admin/user/adicionar', ['as' => 'admin.user.adicionar', 'uses' => 'crud\Create@criar']);
+});
 
-// Route::post('/admin/user/salvar', ['as' => 'admin.user.salvar', 'uses' => 'crud\Create@salvar']);
+Route::group(['middleware' => 'auth', 'prefix'=> 'cursos', 'as' => 'cursos.'], function () {
+    Route::get('/user/lista', 'crud\Create@index')->name('cursos.user.lista');
+});
 
-// Route::get('/admin/user/editar/{id}', ['as' => 'admin.user.editar', 'uses' => 'crud\Create@editar']);
-
-// Route::put('/admin/user/atualizar/{id}', ['as' => 'admin.user.atualizar', 'uses' => 'crud\Create@atualizar']);
-
-// Route::get('/admin/user/deletar/{id}', ['as' => 'admin.user.deletar', 'uses' => 'crud\Create@deletar']);
+Route::group(['middleware' => 'auth', 'prefix'=> 'config', 'as' => 'config.'], function () {
+    Route::get('/configuracao/users', 'crud\Create@config')->name('config.configusers');
+});

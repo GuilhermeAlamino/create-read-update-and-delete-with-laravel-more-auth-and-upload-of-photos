@@ -23,7 +23,7 @@
 
                 <div class="table">
 
-                    <form class="" enctype="multipart/form-data" action="{{ route('admin.user.salvar') }}"
+                    <form class="" enctype="multipart/form-data" action="{{ route('admin.admin.user.salvar') }}"
                         method="post">
                         @csrf
 

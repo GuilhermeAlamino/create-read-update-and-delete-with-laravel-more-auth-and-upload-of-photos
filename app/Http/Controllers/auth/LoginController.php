@@ -16,7 +16,7 @@ class LoginController extends Controller
 
         $dados = $request->all();
         if(Auth::attempt(['email'=>$dados['email'],'password'=>$dados['senha']])){
-            return redirect()->route('welcome.list');
+            return redirect()->route('admin.welcome.list');
         }
         
         return redirect()->route('welcome.login');

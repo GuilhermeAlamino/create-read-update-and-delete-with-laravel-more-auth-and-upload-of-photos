@@ -48,9 +48,9 @@
                                 <td>{{ $registro->rua }}</td>
                                 <td>
                                     <a class="btn btn-warning"
-                                        href="{{ route('admin.user.editar', $registro->id) }}">Editar</a>
+                                        href="{{ route('users.users.user.editar', $registro->id) }}">Editar</a>
                                     <a class="btn btn-danger"
-                                        href="{{ route('admin.user.deletar', $registro->id) }}">Excluir</a>
+                                        href="{{ route('users.users.user.deletar', $registro->id) }}">Excluir</a>
                                 </td>
                             </tr>
                         </tbody>
