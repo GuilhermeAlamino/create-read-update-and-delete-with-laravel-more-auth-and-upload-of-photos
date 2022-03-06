@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login.entrar');
-});
-
-Route::get('/login', ['as' => 'welcome.login', 'uses' => 'auth\LoginController@welcomeLogin']);
+Route::get('/', ['as' => 'welcome.login', 'uses' => 'auth\LoginController@welcomeLogin']);
 Route::get('/login/logout', ['as' => 'welcome.login.logout', 'uses' => 'auth\LoginController@sair']);
 Route::post('/login/entrar', ['as' => 'welcome.login.entrar', 'uses' => 'auth\LoginController@entrar']);
 
