@@ -15,11 +15,12 @@ class UserSeeder extends Seeder
         $dados = [
             'name'=>'Guilherme',
             'email'=>'admin@gmail.com',
+            'imagem'=>'https://logodix.com/logo/1931235.png',
             'password'=>bcrypt('123456'),
         ];
 
         if(User::where('email','=',$dados['email'])->count()){
-            $user = User::where('email','=',$dados['email'])->first();
+            $user = User::where('email','=',$dados['email']);
             $user->update($dados);
             echo "Retornado user alterado";
         }else{

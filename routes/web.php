@@ -40,4 +40,5 @@ Route::group(['middleware' => 'auth', 'prefix'=> 'cursos', 'as' => 'cursos.'], f
 
 Route::group(['middleware' => 'auth', 'prefix'=> 'config', 'as' => 'config.'], function () {
     Route::get('/configuracao/users', 'crud\Create@config')->name('config.configusers');
+    Route::post('/configuracao/users/envio', 'crud\Create@configsalvar')->name('config.configusers.salvar');
 });

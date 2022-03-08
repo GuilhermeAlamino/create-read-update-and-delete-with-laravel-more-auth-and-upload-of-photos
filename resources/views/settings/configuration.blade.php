@@ -3,18 +3,44 @@
 @section('titulo', 'Configuração')
 
 @section('conteudo')
-
-    @include('layouts.components.nav-bar')
-
-    @include('layouts.components.nav')
-
-
-    <div class="container-fluid content-home">
-        <div class="title-list">
-            <h5 class="my-5">Em Breve...</h5>
+    <div class="row p-0 m-0">
+        <div class="col-12 p-0 m-0">
+            @include('layouts.components.nav-bar')
         </div>
-{{-- 
-        <div class="row p-0 m-0">
+    </div>
+
+    <div class="row p-0 m-0">
+        <div class="col-2 p-0 m-0">
+            @include('layouts.components.nav')
+        </div>
+
+        <div class="col-10 p-0 m-0">
+
+            <div class="container-fluid content-home">
+                <div class="title-list">
+                    <h5 class="my-5">Em Breve/ Configuração...</h5>
+                </div>
+                <div class="row p-0 m-0">
+
+                    <div class="col-12 p-0 m-0">
+
+                        <div class="table">
+
+                            <form class="" enctype="multipart/form-data"
+                                action="{{ route('config.config.configusers.salvar') }}" method="post">
+                                @csrf
+                                {{-- <input type="hidden" name="_method" value="put"> --}}
+                                @include('layouts.components._formadmin')
+
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button class="btn btn-primary">Salvar Atualização</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="row p-0 m-0">
             <div class="card-deck">
                 @foreach ($lists as $list)
                     <div class="card">
@@ -35,6 +61,8 @@
                 {{$lists->links()}}
             </div>
         </div> --}}
-    </div>
+            </div>
+        </div>
 
-@endsection
+
+    @endsection

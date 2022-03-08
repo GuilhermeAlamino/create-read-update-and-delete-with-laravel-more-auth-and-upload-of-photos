@@ -5,6 +5,7 @@ namespace App\Http\Controllers\crud;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Crud;
+use App\User;
 
 class Create extends Controller
 {
@@ -74,7 +75,43 @@ class Create extends Controller
         return redirect()->route('cursos.cursos.user.lista');
     }
 
-    public function config(){
+    public function config()
+    {
         return view('settings.configuration');
+    }
+
+    public function configsalvar(Request $request)
+    {
+        $dados = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'imagem' => $request['imagem'],
+            'password' => bcrypt($request['password']),
+        ];
+        if ($request->hasFile('imagem')) {
+            $imagem = $request->file('imagem');
+            $number = rand(0, 1000);
+            $dir = "img/crud/";
+            $extensions = $imagem->guessClientExtension();
+            $nomeImage = "imagem_" . $number . "." . $extensions;
+
+            $imagem->move($dir, $nomeImage);
+
+            $dados['imagem'] = $dir . $nomeImage;
+        }
+
+        User::create($dados);
+
+        if (User::where('email', '=', $dados['email'])->count()) {
+            $user = User::where('email', '=', $dados['email'])->first();
+            $user->update($dados);
+            echo "Retornado user alterado";
+            return redirect()->route('cursos.cursos.user.lista');
+        } else {
+            User::create($dados);
+            echo "Retornado user criado";
+        }
+
+        // return redirect()->route('cursos.cursos.user.lista');
     }
 }
