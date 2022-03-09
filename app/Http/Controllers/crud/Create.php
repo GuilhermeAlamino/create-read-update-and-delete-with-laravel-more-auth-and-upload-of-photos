@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Crud;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class Create extends Controller
 {
@@ -88,6 +89,11 @@ class Create extends Controller
             'imagem' => $request['imagem'],
             'password' => bcrypt($request['password']),
         ];
+
+        $dados = $request->all();
+
+        dd($dados);
+
         if ($request->hasFile('imagem')) {
             $imagem = $request->file('imagem');
             $number = rand(0, 1000);
@@ -116,8 +122,26 @@ class Create extends Controller
     }
 
     public function configedit()
-    {   
+    {
         return view('settings.configuration-edit');
     }
 
+    public function configupdate(Request $request)
+    {
+        $id = Auth::user()->id;
+
+        //    dd($debug);
+
+        if (User::where('id', '=', $id)->count()) {
+            $user = User::where('id', '=', $id)->first();
+            $user->update([
+                'name' => $request['name'],
+                'email' => $request['email'],
+            ]);
+            echo "Retornado user alterado";
+            return redirect('/configedit/configuracao/edit');
+        } else {
+            echo "User not exist";
+        }
+    }
 }

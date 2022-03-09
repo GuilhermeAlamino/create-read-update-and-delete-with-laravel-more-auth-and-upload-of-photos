@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'cursos', 'as' => 'cursos.'], 
 
 Route::group(['middleware' => 'auth', 'prefix' => 'configedit', 'as', '.configedit'], function () {
     Route::get('/configuracao/edit', 'crud\Create@configedit')->name('configedit.configedit.edit');
+    Route::post('/configuracao/edit', 'crud\Create@configupdate')->name('configedit.configupdate.update');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'config', 'as' => 'config.'], function () {
