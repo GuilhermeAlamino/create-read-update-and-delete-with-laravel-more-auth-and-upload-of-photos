@@ -12,7 +12,9 @@
 
     <div class="row p-0 m-0">
         <div class="col-2 p-0 m-0">
-            @include('layouts.components.nav')
+            <div class="row p-0 m-0 nav-customize">
+                @include('layouts.components.nav')
+            </div>
         </div>
 
         <div class="col-10 p-0 m-0">

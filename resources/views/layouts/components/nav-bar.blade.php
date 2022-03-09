@@ -24,7 +24,7 @@
             <div class="user">
                 <div class="img ">
                     <div class="text-user">
-                        <a class="nav-link" href="#">Encontramos o Usúario -> *{{ Auth::user()->name }}*</a>
+                        <a class="nav-link" href="#">Encontramos o Usúario -> *{{ Auth::user()->name }} || ID = {{ Auth::user()->id }}*</a>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@
 
             <div class="container-fluid content-home">
                 <div class="title-list">
-                    <h5 class="my-5">Criar Usúario/ Configuração...</h5>
+                    <h5 class="my-5">Alterar / Configuração...</h5>
                 </div>
                 <div class="row p-0 m-0">
 
@@ -27,15 +27,15 @@
                         <div class="table">
 
                             <form class="" enctype="multipart/form-data"
-                                action="{{ route('config.config.configusers.salvar') }}" method="post">
+                                action="" method="post">
                                 @csrf
-                                @include('layouts.components._formadmin')
+                                {{-- <input type="hidden" name="_method" value="put"> --}}
+                                @include('layouts.components._formedit')
 
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button class="btn btn-primary">Criar Usúario</button>
+                                    <button class="btn btn-primary">Salvar Atualização</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>

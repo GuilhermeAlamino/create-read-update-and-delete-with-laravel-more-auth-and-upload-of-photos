@@ -112,6 +112,12 @@ class Create extends Controller
             echo "Retornado user criado";
         }
 
-        // return redirect()->route('cursos.cursos.user.lista');
+        return redirect()->route('cursos.cursos.user.lista');
     }
+
+    public function configedit()
+    {   
+        return view('settings.configuration-edit');
+    }
+
 }
