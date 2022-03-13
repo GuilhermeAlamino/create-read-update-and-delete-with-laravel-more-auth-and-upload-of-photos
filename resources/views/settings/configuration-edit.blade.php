@@ -20,14 +20,18 @@
                 <div class="title-list">
                     <h5 class="my-5">Alterar / Configuração...</h5>
                 </div>
+                @if (session('mensagem'))
+                    <div class="alert alert-success">
+                        <p>{{ session('mensagem') }}</p>
+                    </div>
+                @endif
                 <div class="row p-0 m-0">
 
                     <div class="col-12 p-0 m-0">
 
                         <div class="table">
 
-                            <form class="" enctype="multipart/form-data"
-                                action="" method="post">
+                            <form class="" enctype="multipart/form-data" action="" method="post">
                                 @csrf
                                 {{-- <input type="hidden" name="_method" value="put"> --}}
                                 @include('layouts.components._formedit')

@@ -1,5 +1,6 @@
 <nav class="navbar navbar_custom navbar-expand-lg">
-    <a class="navbar-brand content-menu-nav nav-link text-center" href="{{ route('admin.welcome.list') }}">Reciclagem <br> CNH</a>
+    <a class="navbar-brand content-menu-nav nav-link text-center" href="{{ route('admin.welcome.list') }}">Reciclagem
+        <br> CNH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,11 +21,14 @@
             </div>
         </div>
     @else
-        <div class="collapse navbar-collapse content-menu-nav d-flex justify-content-end mx-3" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse content-menu-nav d-flex justify-content-end mx-3"
+            id="navbarSupportedContent">
             <div class="user">
                 <div class="img ">
                     <div class="text-user">
-                        <a class="nav-link" href="#">Encontramos o Usúario -> *{{ Auth::user()->name }} || ID = {{ Auth::user()->id }}*</a>
+                        <a class="nav-link text-center" href="#"><img width="30" height="30"
+                                class="rounded-circle" src="http://127.0.0.1:8000/{{ Auth::user()->imagem }}"
+                                alt=""> {{ Auth::user()->name }} <br>Identificação {{ Auth::user()->id }}</a>
                     </div>
                 </div>
             </div>

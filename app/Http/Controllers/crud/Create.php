@@ -90,10 +90,6 @@ class Create extends Controller
             'password' => bcrypt($request['password']),
         ];
 
-        $dados = $request->all();
-
-        dd($dados);
-
         if ($request->hasFile('imagem')) {
             $imagem = $request->file('imagem');
             $number = rand(0, 1000);
@@ -130,18 +126,40 @@ class Create extends Controller
     {
         $id = Auth::user()->id;
 
-        //    dd($debug);
+        if ($request->hasFile('imagem')) {
+            $imagem = $request->file('imagem');
+            $number = rand(0, 1000);
+            $dir = "img/crud/";
+            $extensions = $imagem->guessClientExtension();
+            $nomeImage = "imagem_" . $number . "." . $extensions;
 
-        if (User::where('id', '=', $id)->count()) {
-            $user = User::where('id', '=', $id)->first();
-            $user->update([
-                'name' => $request['name'],
-                'email' => $request['email'],
-            ]);
-            echo "Retornado user alterado";
-            return redirect('/configedit/configuracao/edit');
+            $imagem->move($dir, $nomeImage);
+
+            $dados['imagem'] = $dir . $nomeImage;
+
+            if (User::where('id', '=', $id)->count()) {
+                $user = User::where('id', '=', $id)->first();
+                $user->update([
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'imagem' => $dados['imagem'],
+                ]);
+                return redirect('/configedit/configuracao/edit')->with('mensagem', 'Usuário alterado com sucesso!');
+            }
+            
         } else {
-            echo "User not exist";
+            if (User::where('id', '=', $id)->count()) {
+                $user = User::where('id', '=', $id)->first();
+                $user->update([
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'password' => bcrypt($request['password']),
+                ]);
+                echo "Retornado user alterado";
+                return redirect('/configedit/configuracao/edit')->with('mensagem', 'Usuário alterado com sucesso!');
+            } else {
+                echo "not will possible update";
+            }
         }
     }
 }
