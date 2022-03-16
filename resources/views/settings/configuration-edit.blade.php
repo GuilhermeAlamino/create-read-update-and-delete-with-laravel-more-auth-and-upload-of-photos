@@ -20,11 +20,6 @@
                 <div class="title-list">
                     <h5 class="my-5">Alterar / Configuração...</h5>
                 </div>
-                @if (session('mensagem'))
-                    <div class="alert alert-success">
-                        <p>{{ session('mensagem') }}</p>
-                    </div>
-                @endif
                 <div class="row p-0 m-0">
 
                     <div class="col-12 p-0 m-0">
@@ -33,8 +28,13 @@
 
                             <form class="" enctype="multipart/form-data" action="" method="post">
                                 @csrf
-                                {{-- <input type="hidden" name="_method" value="put"> --}}
                                 @include('layouts.components._formedit')
+
+                                @if (session('mensagem'))
+                                    <div class="alert alert-success">
+                                        <h6 class="text-center">{{ session('mensagem') }}</h6>
+                                    </div>
+                                @endif
 
                                 <div class="col-12 d-flex justify-content-center">
                                     <button class="btn btn-primary">Salvar Atualização</button>
@@ -43,27 +43,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="row p-0 m-0">
-            <div class="card-deck">
-                @foreach ($lists as $list)
-                    <div class="card">
-                        <img src="{{ asset($list->imagem) }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $list->nome }}</h5>
-                            <p class="card-text">{{$list->sobrenome}}</p>
-                            <p class="card-text">{{$list->cpf}}</p>
-                            <p class="card-text">{{$list->email}}</p>
-                            <p class="card-text">{{$list->telefone}}</p>
-                            <p class="card-text">{{$list->adress}}</p>
-                            <p class="card-text">{{$list->rua}}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="col-12 p-0 m-0 paginate-center mt-4">
-                {{$lists->links()}}
-            </div>
-        </div> --}}
             </div>
         </div>
 
