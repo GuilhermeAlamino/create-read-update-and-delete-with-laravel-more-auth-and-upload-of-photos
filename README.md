@@ -1,21 +1,59 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Caminhe até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento*.
 
-## About Laravel
+Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pasta do seu *Ambiente de desenvolvimento*.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```sh
+*git clone https://github.com/GuilhermeAlamino/ZrSystem.git* 
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Agora abre seu editor, vá até a pasta do seu projeto, e atualize as variáveis de ambiente do arquivo (*.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+```sh
+Não esqueça de criar o seu Banco de dados, com o nome que vai ficar na variavel de ambiente DB_DATABASE; 
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```dosini
+APP_NAME="Laravel"
+APP_URL=http://localhost:8080
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=crud_laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Certifique se que tenha composer instalado, se não tiver baixe, pode executar no terminal o comando para verificar -> *composer -v*.
+```sh
+https://getcomposer.org/Composer-Setup.exe
+```
+
+Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta *do seu projeto*, após isso rode o comando no *terminal*, *Rode o comando para instalar as depêndecias no seu *terminal*.
+```sh
+*Composer install*
+```
+
+Rode o comando para Gerar a key do projeto Laravel ainda no *terminal*.
+```sh
+php artisan key:generate
+```
+
+Execute a migrate para carregar a Estrutura do Banco de dados.
+```sh
+php artisan migrate
+```
+
+Execute o seed para gerar o acesso admin ao dashboard.
+```sh
+php artisan db:seed
+```
+
+Execute o projeto com o seguinte comando.
+```sh
+php artisan serve
+```
+
+Agora é só acessar a url.
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
