@@ -18,7 +18,7 @@
 
             <div class="container-fluid content-home">
                 <div class="title-list">
-                    <h5 class="my-5">Lista de Usúarios Registrados</h5>
+                    <h5 class="my-5">Preview Usúarios Registrados</h5>
                 </div>
                 <div class="row p-0 m-0">
                     <div class="card-deck">

@@ -27,7 +27,7 @@
                                 class="content-menu-nav d-flex align-items-center {{ Request::is('cursos/*') ? 'side-color-left' : 'side-color-left-transparent' }} {{ Request::is('cursos/*') ? 'back-white' : ' ' }}">
                                 <i class="fa-solid fa-id-card"></i>
                                 <a class="nav-link {{ Request::is('cursos/*') ? 'nav-link-customize' : ' ' }}"
-                                    href="{{ route('cursos.cursos.user.lista') }}">Cursos</a>
+                                    href="{{ route('cursos.cursos.user.lista') }}">Ver Registros</a>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                                 class="content-menu-nav d-flex align-items-center {{ Request::is('users/*') ? 'side-color-left' : 'side-color-left-transparent' }} {{ Request::is('users/*') ? 'back-white' : ' ' }}">
                                 <i class="fa-solid fa-users"></i>
                                 <a class="nav-link {{ Request::is('users/*') ? 'nav-link-customize' : ' ' }}"
-                                    href="{{ route('users.users.user.adicionar') }}">Usúarios</a>
+                                    href="{{ route('users.users.user.adicionar') }}">Criar Registros</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 class="content-menu-nav d-flex align-items-center {{ Request::is('config/*') ? 'side-color-left' : 'side-color-left-transparent' }} {{ Request::is('config/*') ? 'back-white' : ' ' }}">
                                 <i class="fa-solid fa-gear"></i>
                                 <a class="nav-link {{ Request::is('config/*') ? 'nav-link-customize' : ' ' }}"
-                                    href="{{ route('config.config.configusers') }}">Adicionar Admin</a>
+                                    href="{{ route('config.config.configusers') }}">Criar Usúarios</a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                                 class="content-menu-nav d-flex align-items-center {{ Request::is('configedit/*') ? 'side-color-left' : 'side-color-left-transparent' }} {{ Request::is('configedit/*') ? 'back-white' : ' ' }}">
                                 <i class="fa-solid fa-gear"></i>
                                 <a class="nav-link {{ Request::is('configedit/*') ? 'nav-link-customize' : ' ' }}"
-                                    href="{{ route('configedit.configedit.edit') }}">Alterar Configurações</a>
+                                    href="{{ route('configedit.configedit.edit') }}">Configurações</a>
                             </div>
                         </div>
                     </div>
