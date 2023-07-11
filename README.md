@@ -20,7 +20,7 @@ APP_URL=http://localhost:8080
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=crud_laravel
+DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -40,7 +40,7 @@ Rode o comando para Gerar a key do projeto Laravel ainda no *terminal*.
 php artisan key:generate
 ```
 
-Execute a migrate para carregar a Estrutura do Banco de dados.
+Execute a migrate para executar as migrações do Banco de dados.
 ```sh
 php artisan migrate
 ```
